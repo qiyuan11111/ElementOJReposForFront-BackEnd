@@ -1,3 +1,3 @@
 #!/bin/sh
-service apache2 start
+echo "555"
 /bin/bash
