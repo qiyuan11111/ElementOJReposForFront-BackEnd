@@ -5,4 +5,4 @@ RUN apt-get update --fix-missing && apt-get install -y apache2 --fix-missing
 COPY src /var/www/html
 COPY config/apache2.conf /etc/apache2/apache2.conf
 EXPOSE 80
-CMD apachectl -D FOREGROUND &
+CMD ["/usr/sbin/apache2ctl","-D","FOREGROUND"]
