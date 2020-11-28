@@ -65,4 +65,4 @@ export CLASSPATH=.:%{JAVA_HOME}/lib:%{JRE_HOME}/lib
 export PATH=${JAVA_HOME}/bin:$PATH
 
 #tomcat
-export TOMCAT_HOME=/usr/local/apache-tomcat-8.5.31
+export TOMCAT_HOME=/usr/local/apache-tomcat-8.5.60
