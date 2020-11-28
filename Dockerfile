@@ -7,9 +7,9 @@ RUN apt-get update --fix-missing && apt-get install -y apache2 openjdk-8-jdk --f
 COPY tomcat/OnlineJudge.war /usr/local/apache-tomcat-8.5.60/webapps/OnlineJudge.war
 COPY src /var/www/html
 COPY config/apache2.conf /etc/apache2/apache2.conf
-COPY config/apache2_start.sh /etc/apache2/apache2_start.sh
-RUN	chmod 777 /etc/apache2/apache2_start.sh && mkdir /usr/local/apache-tomcat-8.5.60/logs \
+COPY config/start.sh /etc/apache2/start.sh
+RUN	chmod 777 /etc/apache2/start.sh && mkdir /usr/local/apache-tomcat-8.5.60/logs \
 	&& chmod 755 -R /usr/local/apache-tomcat-8.5.60
 EXPOSE 8080
 EXPOSE 80
-CMD /bin/sh /etc/apache2/apache2_start.sh && /usr/local/apache-tomcat-8.5.60/bin/catalina.sh run
+CMD ["/bin/sh", "/etc/apache2/start.sh"]
