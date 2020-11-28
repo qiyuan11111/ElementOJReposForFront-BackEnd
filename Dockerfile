@@ -12,4 +12,4 @@ RUN	chmod 777 /etc/apache2/apache2_start.sh && mkdir /usr/local/apache-tomcat-8.
 	&& chmod 755 -R /usr/local/apache-tomcat-8.5.60
 EXPOSE 8080
 EXPOSE 80
-CMD /bin/sh /etc/apache2/apache2_start.sh && /bin/sh /usr/local/apache-tomcat-8.5.60/bin/startup.sh
+CMD /bin/sh /etc/apache2/apache2_start.sh && /bin/sh /usr/local/apache-tomcat-8.5.60/bin/catalina.sh run
