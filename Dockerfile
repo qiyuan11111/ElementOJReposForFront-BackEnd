@@ -8,6 +8,6 @@ COPY tomcat/OnlineJudge.war /usr/local/apache-tomcat-8.5.60/webapps/OnlineJudge.
 COPY src /var/www/html
 COPY config/apache2.conf /etc/apache2/apache2.conf
 COPY config/apache2_start.sh /etc/apache2/apache2_start.sh
-RUN	chmod 777 /etc/apache2/apache2_start.sh
+RUN	chmod 777 /etc/apache2/apache2_start.sh && chmod 755 -R /usr/local/apache-tomcat-8.5.60
 EXPOSE 8080
 CMD [ "/bin/sh","/etc/apache2/apache2_start.sh"]
