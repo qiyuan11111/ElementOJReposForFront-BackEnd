@@ -11,6 +11,7 @@ RUN	apt-get update --fix-missing && apt-get install -y apache2 openjdk-8-jdk --f
 	&& chmod 755 -R /usr/local/apache-tomcat-8.5.60 && chmod 700 /usr/lib/comparator/libcmpfile.so
 COPY src /var/www/html
 COPY config/apache2.conf /etc/apache2/apache2.conf
+COPY config/000-default.conf /etc/apache2/sites-enabled/000-default.conf
 EXPOSE 8080
 EXPOSE 80
 CMD ["/bin/sh", "/usr/local/apache-tomcat-8.5.60/start.sh"]
