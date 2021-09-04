@@ -8,6 +8,7 @@ RUN sed -i 's#http://archive.ubuntu.com/#http://mirrors.tuna.tsinghua.edu.cn/#' 
 	&& a2enmod proxy proxy_http proxy_balancer lbmethod_byrequests && chmod 755 -R /usr/local/apache-tomcat-8.5.69
 COPY apache2/apache2.conf /etc/apache2/apache2.conf
 COPY apache2/000-default.conf /etc/apache2/sites-enabled/000-default.conf
+COPY tomcat/java.security /etc/java-8-openjdk/security/java.security
 EXPOSE 8080
 EXPOSE 80
 CMD ["/bin/sh", "/usr/local/elementoj/start.sh"] 
